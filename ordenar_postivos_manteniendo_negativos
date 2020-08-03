@@ -1,0 +1,18 @@
+def ordena_positivos(lista):
+    positivos=[]
+    negativos=list(filter(lambda x: (x < 0), lista)) 
+    indice=[]
+    for i in lista:
+        if i>0:
+            positivos.append(i)
+            indice.append(lista.index(i))
+    for i in indice:
+        negativos.insert(i,min(positivos))
+        positivos.remove(min(positivos))    
+    print(negativos)
+      
+ ordena_positivos([6, 3, -2, 5, -8, 2, -2])
+print("------")
+ordena_positivos([6, 5, 4, -1, 3, 2, -1, 1])
+print("----------------------")
+ordena_positivos([-5, -5,-5, -5, 7, -5])   
